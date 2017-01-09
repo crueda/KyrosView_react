@@ -1,0 +1,3 @@
+rootProject.name = 'KyrosView_react'
+
+include ':app'
