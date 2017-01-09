@@ -19,11 +19,7 @@ export default class KyrosView_react extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
         <Login></Login>
-        <Notification></Notification>
       </View>
     );
   }
@@ -35,17 +31,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+  }
 });
 
 AppRegistry.registerComponent('KyrosView_react', () => KyrosView_react);
