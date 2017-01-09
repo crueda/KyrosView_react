@@ -1,6 +1,6 @@
 /**
- * Sample React Native App
- * https://github.com/facebook/react-native
+ * Kyros React Native App
+ * 
  * @flow
  */
 
@@ -12,6 +12,9 @@ import {
   View
 } from 'react-native';
 
+const Login = require('./src/components/loginView')
+const Notification = require('./src/components/notificationView')
+
 export default class KyrosView_react extends Component {
   render() {
     return (
@@ -19,13 +22,8 @@ export default class KyrosView_react extends Component {
         <Text style={styles.welcome}>
           Welcome to React Native!
         </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
+        <Login></Login>
+        <Notification></Notification>
       </View>
     );
   }
