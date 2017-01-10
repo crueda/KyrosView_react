@@ -42,7 +42,12 @@ class loginView extends Component {
     }
 
     aceptar() {
-        console.log("aceptar");
+        //console.log("aceptar");
+        this.props.navigator.replace({
+            title: 'Notification',
+            name: 'Notification',
+            passProps: {}
+        });
     }
     cancelar() {
         console.log("cancelar");

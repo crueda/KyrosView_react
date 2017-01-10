@@ -7,7 +7,7 @@ class notificationView extends Component {
     render(){
         return(
             <View style={styles.container}>
-                <Text style={styles.Titulo}>>Soy el componente notificationView</Text>
+                <Text style={styles.Titulo}>Soy el componente notificationView</Text>
 
             </View>
         )
@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     Titulo:{
-        marginTop: 70,
+        marginTop: 100,
         fontSize: 24
     },
 })
