@@ -2,15 +2,26 @@
 
 import React, { Component } from 'react';
 import { 
-    View, 
-    Text,
-    Image,
-    TouchableHighlight,
-    Alert,
-    StyleSheet
+  View,
+  Image,
+  Text,
+  TextInput,
+  TouchableHighlight,
+  Alert,
+  StyleSheet
  } from 'react-native'
 
 class loginView extends Component {
+
+    constructor(props) {
+      super(props);
+      console.log(props);
+      this.state = {
+          username: "",
+          password: ""
+      };
+    }
+
     render(){
         return(
             <Image source={{uri: 'https://images.unsplash.com/photo-1446305341947-847fd13db6c4?dpr=1&amp;auto=format&amp;fit=crop&amp;&amp;q=80&amp;cs=tinysrgb&amp;crop='}} style={styles.container} >

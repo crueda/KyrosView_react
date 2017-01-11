@@ -16,40 +16,38 @@ import {
 
 var NavigatorBarRouteMapper = {
   LeftButton: function(route, navigator, index) {
-    if(index == 0){
+
+    if(route.name=='Login' || route.name=='Notification'){
       return null;
     }
-    return(
-      <TouchableHighlight onPress={() => {
-        if(index > 0){
-          navigator.pop();
-        }
-      }}>
+    return(<TouchableHighlight underlayColor='rgba(0,0,0,0)' onPress={() => {
+              if(index > 0){
+                navigator.pop();
+              }
+          }}>
 
-      <Text style={{marginTop:10, marginLeft: 20, color: '#007AFF'}}>Atras</Text>
-      </TouchableHighlight>
+            <Text style={{marginTop: 10, marginLeft:20, color:'#007AFF'}}>Back</Text>
+         </TouchableHighlight>
     )
   },
 
-  RightButton: function(route, navigator, index) {
+  RightButton: function(route){
     return null;
   },
-  Title: function(route, navigator, index) {
-        if(route.name == 'Login'){
+  Title: function(route){
+    if(route.name == 'Login' || route.name == 'Notification'){
       return null;
     }
-
-    return (
-      <Text style={{marginTop: 10, color: '#007AFF'}}>
+    return(
+      <Text style={{marginTop: 10, color:'#007AFF' }}>
         {route.name}
       </Text>
     )
   },
-  
-}
+};
 
 const Login = require('./src/components/loginView')
-const Notification = require('./src/components/notificationView')
+const Tabs = require('./src/components/tabs')
 
 export default class KyrosView_react extends Component {
 
@@ -57,19 +55,19 @@ export default class KyrosView_react extends Component {
     switch (route.name){
       case 'Login':
         return(
-          <Login navigator={navigator} route={route}/>
+          <Login {...route.props} navigator={navigator} route={route}/>
         )
       case 'Notification':
         return(
-          <Notification navigator={navigator} route={route}/>
+          <Tabs {...route.props} navigator={navigator} route={route}/>
           
         )
     }
   }
 
-  render() {
+render() {
     return (
-      <Navigator style={{backgroudColor: '#fff'}}
+      <Navigator style={styles.bar}
         initialRoute={{name: 'Login'}}
         renderScene={this.renderScene}
         configureScene={(route) => {
@@ -87,12 +85,10 @@ export default class KyrosView_react extends Component {
   }
 }
 
+
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+  bar:{
+    backgroundColor: '#fff'
   }
 });
 
